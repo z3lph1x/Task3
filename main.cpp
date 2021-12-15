@@ -65,7 +65,11 @@ int main() {
             alpha[i] = alpha[i - 1] - (ans2 - pi * pi) / df;
         }
         else {
-            cout<< alpha[i-1]<<"<- alpha "<<ans2<<" <- definition of function at the last iteration";
+             cout<< alpha[i-1]<<"<- alpha "<<ans2<<" <- definition of function at the last iteration"<<endl;
+            double alp = alpha[i-1];
+            for(int i = 1;i < 7;i++){
+                cout<< Runge_Kutta_4(0, alp, a, b, N)[i*1000-1]<<" Definition in "<<0.5*i<<endl;
+            }
             return 0;
         }
     }
